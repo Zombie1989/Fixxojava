@@ -48,7 +48,7 @@
             transition: 100ms ease-in;
                 
             &:hover {
-                color: $color-white;
+                color: $color-dark;
                 background-color: $color-red;
             }
         }
@@ -58,20 +58,4 @@
             background-color: $color-red;
         }
     }   
-}
-
-.header-logo {
-
-}
-
-.header-menu {
-    .header-link {
-
-    }
-}
-
-.menu-icons {
-    .menu-icon {
-
-    }
 }
