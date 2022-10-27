@@ -1,0 +1,21 @@
+
+
+
+.btn-box-right,
+.btn-box-left {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
+.btn-box-left {
+    border-left: 2px solid $color-white;
+    border-top: 2px solid $color-white;
+    left: 10px;
+    top: 10px;
+}
+.btn-box-right {
+    border-right: 2px solid $color-white;
+    border-bottom: 2px solid $color-white;
+    right: 10px;
+    bottom: 10px;
+}
