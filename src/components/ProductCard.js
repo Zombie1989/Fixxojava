@@ -1,25 +1,38 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductCard = ({item}) => {
+const ProductCard = ({product}) => {
+
+    const addToWishList = (e) => {
+        console.log(`${e}`)
+    }
+    const addToCompare = (e) => {
+        console.log("added to compare list")
+    }
+    const addToShoppingCart = (e) => {
+        console.log("added to shopping cart")
+    }
+
+
   return (
     <div className="col">
         <div className="card">
             <div className="card-img">
+                <img src={product.img} alt={product.name} />
                 <div className="card-menu">
-                    <button className="menu-link"><i className="fa-regular fa-heart"></i></button>
-                    <button className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
-                    <button className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
+                    <button onClick={addToWishList} className="menu-link"><i className="fa-regular fa-heart"></i></button>
+                    <button onClick={addToCompare} className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
+                    <button onClick={addToShoppingCart} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
                 </div>
-                <NavLink to="/products/" className="btn-card">
+                <NavLink to={`/products/${product.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-card">
                     <span className="btn-box-left"></span>
                     Quick View
                     <span className="btn-box-right"></span>
                 </NavLink>
             </div>
             <div className="card-body">
-                <p className="card-category">{item.category}</p>
-                <h5 className="card-title">{item.name}</h5>
+                <p className="card-category">{product.category}</p>
+                <h5 className="card-title">{product.name}</h5>
                 <p className="card-rating">
                     <i className="fa-sharp fa-solid fa-star"></i>
                     <i className="fa-sharp fa-solid fa-star"></i>
@@ -28,8 +41,7 @@ const ProductCard = ({item}) => {
                     <i className="fa-sharp fa-solid fa-star"></i>
                 </p>
                 <div className="prices">
-                    <p className="old-price">{item.price}</p>
-                    <p className="regular-price">{item.price}</p>
+                    <p className="regular-price">{product.price}</p>
                 </div>
             </div>
         </div>

@@ -1,10 +1,11 @@
 import './style.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
-import NotFoundView from './views/NotFoundView'
+import ContactsView from './views/ContactsView';
 import ProductsView from './views/ProductsView';
-import FooterSection from './sections/FooterSection';
+import ProductDetailsView from './views/ProductDetailsView';
+import NotFoundView from './views/NotFoundView';
+
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/contacts" element={<ContactsView />} />
         <Route path="/products" element={<ProductsView />} />
+        <Route path="/products/:id" element={<ProductDetailsView />} />
         <Route path="*" element={<NotFoundView />} />
 
       </Routes>
