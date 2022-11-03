@@ -1,6 +1,6 @@
 import React from 'react'
-import FooterSection from '../sections/FooterSection'
-import MainMenuSection from '../sections/MainMenuSection'
+import Footer from '../sections/Footer'
+import MainMenu from '../sections/MainMenu'
 
 const NotFoundView =() => {
 
@@ -8,12 +8,12 @@ const NotFoundView =() => {
 
     return (
         <>
-            <MainMenuSection />
+            <MainMenu />
             <div className="container d-flex justify-content-center align-items-center" style={{ height: "900px" }}>
                 <div>404 - Page Not Found</div>
             </div>
             <div style={{ position: "fixed", bottom: "0", width: "100%" }}>
-                <FooterSection />
+                <Footer />
             </div>
         </>
     )

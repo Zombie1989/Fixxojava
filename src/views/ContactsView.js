@@ -1,9 +1,9 @@
 import React from 'react'
-import BreadcrumbSection from '../sections/BreadcrumbSection'
-import ContactFormSection from '../sections/ContactFormSection'
-import FooterSection from '../sections/FooterSection'
-import MainMenuSection from '../sections/MainMenuSection'
-import MapSection from '../sections/MapSection'
+import Breadcrumb from '../sections/Breadcrumb'
+import Contact from '../sections/ContactForm'
+import Footer from '../sections/Footer'
+import MainMenu from '../sections/MainMenu'
+import Map from '../sections/Map'
 
 const ContactsView = () => {
 
@@ -11,11 +11,11 @@ const ContactsView = () => {
 
   return (
     <>
-      <MainMenuSection />
-      <BreadcrumbSection currentPage="Contacts"/>
-      <MapSection />
-      <ContactFormSection />
-      <FooterSection />
+      <MainMenu />
+      <Breadcrumb currentPage="Contacts"/>
+      <Map />
+      <Contact />
+      <Footer />
     </>
   )
 }

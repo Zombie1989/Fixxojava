@@ -1,16 +1,21 @@
-import React from 'react'
-import FooterSection from '../sections/FooterSection'
-import MainMenuSection from '../sections/MainMenuSection'
+import React, { useContext } from 'react'
+import Footer from '../sections/Footer'
+import MainMenu from '../sections/MainMenu'
+import ProductGrid from '../sections/ProductGrid'
+import { ProductContext } from '../contexts/contexts'
 
 
 const ProductsView = () => {
+  const productContext = useContext(ProductContext)
 
   window.top.document.title = 'Products | Fixxo.'
   
   return (
     <>
-        <MainMenuSection />
-        <FooterSection />
+      <MainMenu />
+      <ProductGrid title="Products" items={productContext.all} />
+      <Footer />
+
     </>
   )
 }

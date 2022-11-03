@@ -12,6 +12,7 @@ const ContactFormSection = () => {
         setContactForm({...contactForm, [id]:value})
     }
 
+
     const validate = (values) => {
         const errors = {}
         const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ //validates email
@@ -39,7 +40,8 @@ const ContactFormSection = () => {
             setCanSubmit(false)
 
         return errors;
-    }
+    } 
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -52,15 +54,36 @@ const ContactFormSection = () => {
             <h2>Come in Contact with Us</h2>
             <form onSubmit={handleSubmit} noValidate>
                 <div>
-                    <input id="name" type="text" placeholder="Your name" value={contactForm.name} onChange={handleChange} />
+                    <input 
+                        id="name" 
+                        type="text" 
+                        placeholder="Your name" 
+                        value={contactForm.name} 
+                        onChange={handleChange} 
+                        onkeyup="validate(event)"
+                    />
                     <div className="errorMessage">{formErrors.name}</div>
                 </div>
                 <div>
-                    <input id="email" type="email" placeholder="Your e-mail" value={contactForm.email} onChange={handleChange} />
+                    <input 
+                        id="email" 
+                        type="email" 
+                        placeholder="Your e-mail" 
+                        value={contactForm.email} 
+                        onChange={handleChange} 
+                        onkeyup="validate(event)"
+                    />
                     <div className="errorMessage">{formErrors.email}</div>
                 </div>
                 <div className="text-area">
-                    <textarea id="comment" type="text" placeholder="comments" value={contactForm.comment} onChange={handleChange} ></textarea>
+                    <textarea 
+                        id="comment" 
+                        type="text" 
+                        placeholder="comments" 
+                        value={contactForm.comment} 
+                        onChange={handleChange}
+                        onkeyup="validate(event)" >                       
+                    </textarea>
                     <div className="errorMessage">{formErrors.comment}</div>
                 </div>
                 <div className="form-btn">
