@@ -1,10 +1,12 @@
 .header {
     padding-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo menuicons"
-                         "menulinks menulinks";
-    
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo menuicons"
+                             "menulinks menulinks";
+    }
     .header-logo {
         grid-area: logo;
         font-weight: $font-weight-bold;
@@ -73,12 +75,14 @@
 
 @media (min-width: 992px) {
     .header {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "logo menulinks menuicons";
         padding-top: 20px;
         padding-bottom: 20px;
 
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "logo menulinks menuicons";
+        }
         .header-menu {
             text-decoration: none;
             grid-area: menulinks;

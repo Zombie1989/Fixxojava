@@ -6,9 +6,11 @@
 @import "./cores/buttons";
 
 // sections
-@import "./sections/MainMenuSection";
-@import "./sections/BreadcrumbSection";
-@import "./sections/MapSection";
+@import "./sections/MainMenu";
+@import "./sections/Breadcrumb";
+@import "./sections/Map";
 @import "./sections/ContactForm";
-@import "./sections/ProductGridSection";
-@import "./sections/FooterSection";
+@import "./sections/ProductGrid";
+@import "./sections/Footer";
+@import "./sections/TopBanner";
+@import "./sections/TopPicks";
