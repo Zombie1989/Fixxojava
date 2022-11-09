@@ -2,12 +2,17 @@ import React, {useContext} from 'react'
 import MainMenu from '../sections/MainMenu'
 import TopBanner from '../sections/TopBanner'
 import ProductGrid from '../sections/ProductGrid'
+import Saletwenty from '../sections/sale29'
+import Saleforty from '../sections/sale49'
+import WebpageInfo from '../sections/webpageInfo'
 import Footer from '../sections/Footer'
-import { ProductContext } from '../contexts/contexts'
+import { FeaturedProductsContext, SaleOneProductsContext } from '../contexts/contexts'
 import TopPicks from '../sections/TopPicks'
 
+
 const HomeView = () => {
-  const productContext = useContext(ProductContext)
+  const products = useContext(FeaturedProductsContext)
+  const products2 = useContext(SaleOneProductsContext)
 
   window.top.document.title = 'Fixxo.'
 
@@ -19,8 +24,11 @@ const HomeView = () => {
       <MainMenu className="colorGradient" />
       <TopBanner title="Sale Up To 50% OFF" text="Online shopping free home delivery over $100" />
       </header>
-      <ProductGrid title="Featured Products" items={productContext.featuredProducts} />
+      <ProductGrid title="Featured Products" items={products} />
       <TopPicks />
+      <Saletwenty items={products2} />
+      <Saleforty items={products2} />
+      <WebpageInfo />
       <Footer />
     </>
   )

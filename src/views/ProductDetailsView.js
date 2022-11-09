@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Footer from '../sections/Footer'
 import MainMenu from '../sections/MainMenu'
+import ProductDetails from '../sections/ProductDetails'
 
 const ProductDetailsView = () => {
+    const {id} = useParams()
+    const [product, setProduct] = useState({})
 
-    const params = useParams()
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`)
+            setProduct(await result.json())
+        }
+        fetchData()
+    }, [])
 
     return (
         <>
         <MainMenu />
-            <div className="container mt-5">
-                <h1>{params.name}</h1>
-            </div>
+        <ProductDetails product={product} />
         <Footer />
         </>
     )
