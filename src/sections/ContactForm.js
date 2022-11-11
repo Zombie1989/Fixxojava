@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { submitData, validate } from '../assets/scripts/validation'
 
-const ContactForm = () => {
+const ContactForm = ({title = []}) => {
   let currentPage = "Contact Us"
   window.top.document.title = `${currentPage} || Fixxo` 
 
@@ -84,7 +84,7 @@ const ContactForm = () => {
         
         
         
-        <h2>Come in Contact with Us</h2>
+        <h2>{title}</h2>
         <form onSubmit={handleSubmit} noValidate>
           <div>
             <input 

@@ -21,13 +21,13 @@ const HomeView = () => {
       <header style={{  
         background: "rgb(230,230,230)",
         background: "linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(244,244,244,1) 100%)"}}>
-      <MainMenu className="colorGradient" />
+      <MainMenu />
       <TopBanner title="Sale Up To 50% OFF" text="Online shopping free home delivery over $100" />
       </header>
       <ProductGrid title="Featured Products" items={products} />
       <TopPicks />
-      <Saletwenty items={products2} />
-      <Saleforty items={products2} />
+      <Saletwenty title="2 FOR USD $29" items={products2} />
+      <Saleforty title="2 FOR USD $49" items={products2} />
       <WebpageInfo />
       <Footer />
     </>

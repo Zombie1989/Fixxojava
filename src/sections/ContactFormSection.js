@@ -51,7 +51,6 @@ const ContactFormSection = () => {
   return (
     <section className="contact-form">
         <div className="container">
-            <h2>Come in Contact with Us</h2>
             <form onSubmit={handleSubmit} noValidate>
                 <div>
                     <input 
